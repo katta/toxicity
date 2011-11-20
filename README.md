@@ -19,7 +19,7 @@ This is a java based tool which calculates the toxicity of your code based on th
 
 ## Creating Jar
 
-* `toxicity.jar` is available under `[ROOT_DIR]/dist or you can build yourselves using the next instruction
+* `toxicity.jar` is available under `[ROOT_DIR]/dist` or you can build one using the next instruction
 * Run `mvn clean package` which creates a package `toxicity-1.0.jar` under `[ROOT_DIR]/target`
 
 ## Usage
