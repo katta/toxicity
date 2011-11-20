@@ -1,3 +1,17 @@
+This is a java based tool which calculates the toxicity of your code based on the [checkstyle](http://maven.apache.org/plugins/maven-checkstyle-plugin/) report generated for your code. Currently the following checks have been implemented.
+
+        BooleanExpressionComplexityCheck
+        ClassDataAbstractionCouplingCheck
+        ClassFanOutComplexityCheck
+        CyclomaticComplexityCheck
+        FileLengthCheck
+        MethodLengthCheck
+        MissingSwitchDefaultCheck
+        NestedIfDepthCheck
+        NestedTryDepthCheck
+        ParameterNumberCheck
+        
+
 ## Prerequisites
 
 * Maven 2.0 
@@ -21,19 +35,7 @@
 ## How does it work
 
 
-* This tool requires the [checkstyle](http://maven.apache.org/plugins/maven-checkstyle-plugin/) result (in the form of xml) generated from your java project.
-* The following checks have been implemented in toxicity calculation 
-        
-        BooleanExpressionComplexityCheck
-        ClassDataAbstractionCouplingCheck
-        ClassFanOutComplexityCheck
-        CyclomaticComplexityCheck
-        FileLengthCheck
-        MethodLengthCheck
-        MissingSwitchDefaultCheck
-        NestedIfDepthCheck
-        NestedTryDepthCheck
-        ParameterNumberCheck
+* This tool requires the [checkstyle](http://maven.apache.org/plugins/maven-checkstyle-plugin/) result (in the form of xml) generated from your java project.        
 
 * There are two types of categories in the above mentioned checks. One which has the `limit` configured for a given check and the second which checks for `existence` of the voilation.
 
