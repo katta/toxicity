@@ -15,6 +15,8 @@
         java -jar toxicity.jar <checkstyle-result.xml> <output.csv>
 
         e.g. java -jar toxicity.jar checkstyle-result.xml toxicity-output.csv
+        
+* This command does print the summary of all the checks on the console and generates a csv (with given output file name) which contains the toxicity value for each of the check for every file.
 
 ## How does it work
 
