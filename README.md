@@ -5,7 +5,7 @@ Prerequisites
 
 Creating Jar
 ------------
-* Run "mvn clean package" which creates a package toxicity-1.0.jar under <ROOT_DIR>/target
+* Run "mvn clean package" which creates a package toxicity-1.0.jar under [ROOT_DIR]/target
 
 Usage
 -----
