@@ -37,8 +37,6 @@
 
 * There are two types of categories in the above mentioned checks. One which has the `limit` configured for a given check and the second which checks for `existence` of the voilation.
 
-e.g. for `MissingSwtichDefaultCheck` any limit does not makes sense, this check just checks for the voilation of this rule. However for other checks there is a limit configured for the voilation.
-
 * If we consider a `MethodLengthCheck`, lets assume the limit configured in checkstyle as 20. This means that if a method length exceeds 20 lines that method is voilating this check. In this case the toxicity is calculated as 
 
         toxicity = (number of actual lines in a method) / (limit configured for MethodLengthCheck)
