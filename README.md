@@ -1,7 +1,7 @@
 ## Prerequisites
 
-* Maven to be installed
-* Java to be installed
+* Maven 2.0 
+* Java 1.6
 
 ## Creating Jar
 
@@ -42,6 +42,12 @@ e.g. for `MissingSwtichDefaultCheck` any limit does not makes sense, this check 
 * If we consider a `MethodLengthCheck`, lets assume the limit configured in checkstyle as 20. This means that if a method length exceeds 20 lines that method is voilating this check. In this case the toxicity is calculated as 
 
         toxicity = (number of actual lines in a method) / (limit configured for MethodLengthCheck)
+        
         e.g. If method has 50 lines, formulae for tixicity looks like `toxicity = 50/20` which is 2.5
+        
+* For checks like `MissingSwitchDefaultCheck` which does not have a limit configured, toxicity is calculated as 
+
+        toxicity = number of swtich statements in a given file with missing default option
+
 
         
