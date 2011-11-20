@@ -21,7 +21,7 @@
 ## How does it work
 
 
-* This tool requires the checkstyle result (in the form of xml) generated from your java project.
+* This tool requires the [checkstyle](http://maven.apache.org/plugins/maven-checkstyle-plugin/) result (in the form of xml) generated from your java project.
 * The following checks have been implemented in toxicity calculation 
         
         BooleanExpressionComplexityCheck
