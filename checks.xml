@@ -33,10 +33,7 @@
         </module>
 
         <module name="MethodLength">
-            <!--
             <property name="max" value="30" />
-            -->
-            <property name="max" value="5" />
         </module>
 
         <module name="ParameterNumber">
@@ -48,8 +45,7 @@
         </module>
 
         <module name="NestedIfDepth">
-            <!--<property name="max" value="3" />-->
-            <property name="max" value="2" />
+            <property name="max" value="3" />
         </module>
 
         <module name="NestedTryDepth">
