@@ -44,7 +44,7 @@ This is a java based tool which calculates the toxicity of your code based on th
 
         toxicity = (number of actual lines in a method) / (limit configured for MethodLengthCheck)
         
-        e.g. If method has 50 lines, formulae for tixicity looks like `toxicity = 50/20` which is 2.5
+        e.g. If method has 50 lines, formulae for toxicity looks like `toxicity = 50/20` which is 2.5
         
 * For checks like `MissingSwitchDefaultCheck` which does not have a limit configured, toxicity is calculated as 
 
