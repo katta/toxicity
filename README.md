@@ -1,6 +1,3 @@
-How to build
-============
-
 Prerequisites
 -------------
 * Maven to be installed
