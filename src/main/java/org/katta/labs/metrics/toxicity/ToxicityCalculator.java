@@ -3,7 +3,6 @@ package org.katta.labs.metrics.toxicity;
 import org.katta.labs.metrics.toxicity.check.Check;
 import org.katta.labs.metrics.toxicity.check.Checks;
 import org.katta.labs.metrics.toxicity.domain.Checkstyle;
-import org.katta.labs.metrics.toxicity.domain.Toxicity;
 import org.katta.labs.metrics.toxicity.util.FileUtil;
 import org.katta.labs.metrics.toxicity.util.JAXBUtil;
 import org.katta.labs.metrics.toxicity.util.StringUtil;
@@ -36,20 +35,20 @@ public class ToxicityCalculator {
 
     public Map<String, Map<String, Double>> calculate() {
         Checkstyle checkstyle = loadCheckstyle(checkstyleFilePath);
-        Map<String, Map<String, Double>> toxicValues = checkstyle.getFiles().calculateToxicValue();
-
-
-        return toxicValues;
+        return checkstyle.getFiles().calculateToxicValue();
     }
 
     String summary(Map<String, Map<String, Double>> toxicValues) {
         Checks allChecks = Checks.all();
+        double totalToxicity = 0.0;
         for (Map<String, Double> values : toxicValues.values()) {
             for (String checkName : values.keySet()) {
-                allChecks.find(checkName).addToxicValue(values.get(checkName));
+                Double toxicity = values.get(checkName);
+                allChecks.find(checkName).addToxicValue(toxicity);
+                totalToxicity += toxicity;
             }
         }
-        return allChecks.toString();
+        return allChecks.toString() + "\nTotal Toxicity :" + totalToxicity;
     }
 
     String toCsv(Map<String, Map<String, Double>> toxicValues) {
@@ -76,7 +75,4 @@ public class ToxicityCalculator {
         return JAXBUtil.load(Checkstyle.class, filePath);
     }
 
-    private Toxicity loadToxicity(String toxicityFilePath) {
-        return JAXBUtil.load(Toxicity.class, toxicityFilePath);
-    }
 }
