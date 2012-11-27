@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/katta/toxicity.png?branch=master)](https://travis-ci.org/katta/toxicity)
+
 This is a java based tool which calculates the toxicity of your code based on the [checkstyle](http://maven.apache.org/plugins/maven-checkstyle-plugin/) report generated for your code. Currently the following checks have been implemented.
 
         BooleanExpressionComplexityCheck
