@@ -12,7 +12,7 @@ public class ParameterNumberCheckTest{
     private ParameterNumberCheck check;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         check = new ParameterNumberCheck();
     }
 
