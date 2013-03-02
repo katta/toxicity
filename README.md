@@ -40,6 +40,14 @@ This is a java based tool which calculates the toxicity of your code based on th
 
 * This tool requires the [checkstyle](http://maven.apache.org/plugins/maven-checkstyle-plugin/) result (in the form of xml) generated from your java project.        
 
+* To create a suitable Checkstyle report outside of Maven use the following command 
+         
+        java -jar checkstyle-all.jar -c toxicity/checks.xml -f xml -o <checkstyleFilePath> -r <javaSourcePath>
+        
+        e.g. java -jar checkstyle-all.jar -c toxicity/checks.xml -f xml -o checkstyle-result.xml -r ./myproject/src
+
+* Checkstyle creates localized reports. Reports in languages other then English are not recognized by `toxicity.jar`. Use `-Duser.language=en` to run Checkstyle under an English locale.
+
 * There are two types of categories in the above mentioned checks. One which has the `limit` configured for a given check and the second which checks for `existence` of the voilation.
 
 * If we consider a `MethodLengthCheck`, lets assume the limit configured in checkstyle as 20. This means that if a method length exceeds 20 lines that method is voilating this check. In this case the toxicity is calculated as 

@@ -22,7 +22,11 @@ public class ToxicityCalculator {
     public static void main(String... args) {
         if (args == null || args.length != 2) {
             System.out.println("Usage: toxicity.jar <checkstyleFilePath> <outputCSVFilePath>");
+            System.out.println("Calculates the toxicity of your code based on the checkstyle report generated for your code.");
+            System.out.println("To calculate a suitable Checkstyle report use:");
+            System.out.println("   checkstyle-all.jar -c toxicity/checks.xml -f xml -o <checkstyleFilePath> -r <javaSourcePath>");
             System.exit(1);
+            return;
         }
 
         ToxicityCalculator calculator = new ToxicityCalculator(args[0]);
