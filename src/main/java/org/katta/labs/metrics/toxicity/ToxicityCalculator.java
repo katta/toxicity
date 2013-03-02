@@ -16,13 +16,13 @@ public class ToxicityCalculator {
     private String checkstyleFilePath;
 
     public ToxicityCalculator(String checkstyleFilePath) {
-
         this.checkstyleFilePath = checkstyleFilePath;
     }
 
     public static void main(String... args) {
         if (args == null || args.length != 2) {
             System.out.println("Usage: toxicity.jar <checkstyleFilePath> <outputCSVFilePath>");
+            System.exit(1);
         }
 
         ToxicityCalculator calculator = new ToxicityCalculator(args[0]);
