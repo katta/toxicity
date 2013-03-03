@@ -18,7 +18,13 @@ public abstract class Check {
 
         for (CheckstyleError error : errors) {
             Map<String, String> linesMap = StringUtil.collectParams(getErrorFormat(), error.getMessage());
-            value += new Double(linesMap.get("actual").replaceAll(",", "")) / new Double(linesMap.get("limit").replaceAll(",", ""));
+            String actual = linesMap.get("actual");
+            String limit = linesMap.get("limit");
+            if (actual == null || limit == null) {
+               // Checkstyle report does not match our expecations - abort
+               throw new RuntimeException("\"" + error.getMessage() + "\" was not recognized as Checkstyle message (maybe in wrong language?)");
+            }
+            value += new Double(actual.replaceAll(",", "")) / new Double(limit.replaceAll(",", ""));
         }
 
         return value;
