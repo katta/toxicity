@@ -7,6 +7,8 @@ import java.util.*;
 
 public class Checks extends ArrayList<Check> {
 
+    public static final String TOTAL = "total";
+   
     public Checks() {
     }
 
@@ -34,9 +36,14 @@ public class Checks extends ArrayList<Check> {
     public HashMap<String, Double> calculateToxicValue(CheckstyleFile checkstyleFile) {
         HashMap<String, Double> checkValues = new HashMap<String, Double>();
 
+        double sum = 0.0;
         for (Check check : this) {
-            checkValues.put(check.getName(), check.calculateToxicValue(checkstyleFile));
+            double toxicValueOfCheck = check.calculateToxicValue(checkstyleFile);
+            sum += toxicValueOfCheck;
+            checkValues.put(check.getName(), toxicValueOfCheck);
         }
+        checkValues.put(TOTAL, sum);
+        
         return checkValues;
     }
 
